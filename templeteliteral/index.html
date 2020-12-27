@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Templete Literar | Expresiones</title>
+  </head>
+  <body>
+    <script>
+      const nombre = "Julio";
+      console.log(`mi nombre es ${nombre}`);
+      console.log(`tengo ${23} anios`);
+      console.log(`mi nombre es ${40}`);
+      console.log(`mi nombre es ${(x = "Julio")}`);
+      console.log(
+        `el nombre es ${(function () {
+          return "Julio";
+        })()}`
+      );
+      console.log(`el nombre es ${true && "Julio Gragirena"}`);
+      console.log(`el nombre es ${false ? "julio" : "saul"}`);
+      console.log(`estilos ${["a", "b"].map((item) => `${item}-styles`)}`);
+    </script>
+  </body>
+</html>
