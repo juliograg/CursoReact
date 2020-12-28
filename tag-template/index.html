@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAGEED-TEMPLETE</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+        height: 100vh;
+        background-color: aqua;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      strong {
+        background-color: rgb(238, 3, 3);
+        color: white;
+        padding: 3px;
+        border: 2px solid white;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function taggedTemplate(strings, ...dynamicValues) {
+        let newContend = "";
+        strings.forEach((string, index) => {
+          const strong = dynamicValues[index]
+            ? `<strong>${dynamicValues[index]}</strong>`
+            : "";
+          //newContend += string + strong;
+          newContend += `${string} ${strong}`;
+        });
+        console.log(newContend);
+        return `<p>${newContend}</p>`;
+      }
+      const message = taggedTemplate`EL ${"trabajo duro"} supera el ${"talento natural"}`;
+      document.querySelector("body").innerHTML = message;
+    </script>
+  </body>
+</html>
