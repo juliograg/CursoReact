@@ -83,16 +83,18 @@
       const burn = () => {
         window.result.textContent = "";
         store.dispatch({ type: "QUEMAR", payload: 1.42 });
-        
+
         // $burn.innerHTML = store.getState();
       };
       const goalCal = (name) => {
         const { calPizza, calSoda } = store.getState();
-        
+
         const success = `quemaste todas las calorias de ${name}`;
         const message = `te faltan quemar ${
           name === "pizza" ? calPizza.toFixed(2) : calSoda.toFixed(2)
         } calorias para llegar a las calorias de la ${name}`;
+
+
         switch (name) {
           case "pizza":
             if (calPizza > 0) {
@@ -121,6 +123,7 @@
         calPizza: 1835,
         calSoda: 97,
       });
+
       store.subscribe(() => {
         window.result.textContent = `Haz quemado ${store
           .getState()
@@ -128,9 +131,11 @@
       });
 
       $burn.addEventListener("click", burn);
+
       $pizza.addEventListener("click", (e) => {
         goalCal(e.target.name);
       });
+
       $soda.addEventListener("click", (e) => {
         goalCal(e.target.name);
       });
