@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Component</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: rgb(153, 0, 255);
+      height: 100vh;
+    }
+    .container {
+      height: 100%;
+    }
+  </style>
+  <body>
+    <div class="container" id="container"></div>
+    <script src="stylescomponentes.js"></script>
+    <script>
+      const props = {
+        message: "No Te Rindas",
+        name: "Julio",
+      };
+
+      const containerStyles = styled.div`
+        display: flex;
+        justify-content: center;
+        align-item: center;
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+        background-color: Black;
+      `;
+      const titleStyled = styled.h1`
+        color: orange;
+        font-family: system-ui;
+        text-shadow: 2px 2px 0 black;
+        margin: auto 0;
+      `;
+      const Title = component`------${"message"}------${"name"}`(props);
+      render(
+        containerStyles(titleStyled(Title)),
+        document.getElementById("container")
+      );
+    </script>
+  </body>
+</html>
