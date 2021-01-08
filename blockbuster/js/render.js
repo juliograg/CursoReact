@@ -1,6 +1,7 @@
-function buildElement({ title, id, poster_path, vote_average }) {
+function buildElement({ title, id, poster_path, vote_average, recommended }) {
   const $template = document.createElement("article");
   $template.classList.add("movie");
+  recommended && $template.classList.add("recommended") 
   const URL = `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`;
   $template.innerHTML = `
         <img
@@ -22,7 +23,7 @@ function cleanMovieList() {
 
 function renderElement(movie) {
   const $container = document.getElementById("container");
-  const element = buildElement(movie)
+  const element = buildElement(movie);
   $container.append(element);
 }
 
