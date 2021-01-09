@@ -1,7 +1,7 @@
 function buildElement({ title, id, poster_path, vote_average, recommended }) {
   const $template = document.createElement("article");
   $template.classList.add("movie");
-  recommended && $template.classList.add("recommended") 
+  recommended && $template.classList.add("recommended");
   const URL = `https://image.tmdb.org/t/p/w220_and_h330_face${poster_path}`;
   $template.innerHTML = `
         <img
@@ -14,6 +14,11 @@ function buildElement({ title, id, poster_path, vote_average, recommended }) {
         <span class="movie-rate">${vote_average}</span>
     `;
   return $template;
+}
+
+export function renderMovieListFromMap(list, map) {
+  cleanMovieList();
+  list.forEach((movieId) => renderElement(map.get(movieId)));
 }
 
 function cleanMovieList() {
