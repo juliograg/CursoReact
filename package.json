@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server ./react/index.html"
+    "start": "live-server react/index.html"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/juliograg/CursoReact/issues"
   },
-  "homepage": "https://github.com/juliograg/CursoReact#readme",
-  "devDependencies": {
-    "live-server": "^1.2.1"
-  }
+  "homepage": "https://github.com/juliograg/CursoReact#readme"
 }
