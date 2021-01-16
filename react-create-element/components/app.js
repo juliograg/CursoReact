@@ -1,7 +1,7 @@
 import { Component, createElement } from "../lib/react/index.js";
 import User from "./user.js";
 import Wrapper from "./wrapper.js";
-// import UserStyled from "./userStyled.js";
+import UserStyled from "./userStyled.js";
 
 class App extends Component {
   render() {
@@ -9,7 +9,15 @@ class App extends Component {
       class: "app",
       children: new Wrapper({
         children: [
-          new User({ name: "Ash", avatar: "./images/ash.jpg" }).render(),
+          new User({
+            name: "Ash",
+            avatar: "./images/ash.jpg",
+            age: 10,
+          }),
+          new UserStyled({
+            name: "Ash",
+            avatar: "./images/ash.jpg",
+          }),
         ],
       }),
     });
